@@ -120,14 +120,16 @@ Ce TP se déroulera sur plusieurs machines connectées sur le même réseau loca
 
 ## Travaux à réaliser après un simple MapReduce
 
-1. **Ajout de la Tolérance aux Pannes :**  
+1. **Ajout de la Tolérance aux Pannes (Optionnel) :**  
    Implémentez un mécanisme permettant de détecter lorsqu'un nœud de traitement ne répond pas ou se déconnecte, et redirigez son segment vers un autre nœud disponible.
 
-2. **Évolutivité Horizontale :**  (Optionnel)
+2. **Évolutivité Horizontale (Optionnel) :**  
    Permettez à l'architecture de gérer dynamiquement l'ajout et la suppression de nœuds de traitement pendant l'exécution du système.
 
-3. **Analyse de Données Avancée :**  
+4. **Analyse de Données Avancée :**  
    Modifiez les fonctions Map et Reduce pour réaliser d'autres types d'analyses sur le jeu de données de [Yelp](https://business.yelp.com/data/resources/open-dataset/)
+
+** /!\ Question 1 et question 2 est optionnel donc il suffit de faire l'un des deux questions **
 
 ---
 
