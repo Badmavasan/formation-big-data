@@ -123,7 +123,7 @@ Ce TP se déroulera sur plusieurs machines connectées sur le même réseau loca
 1. **Ajout de la Tolérance aux Pannes :**  
    Implémentez un mécanisme permettant de détecter lorsqu'un nœud de traitement ne répond pas ou se déconnecte, et redirigez son segment vers un autre nœud disponible.
 
-2. **Évolutivité Horizontale :**  
+2. **Évolutivité Horizontale :**  (Optionnel)
    Permettez à l'architecture de gérer dynamiquement l'ajout et la suppression de nœuds de traitement pendant l'exécution du système.
 
 3. **Analyse de Données Avancée :**  
