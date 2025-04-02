@@ -123,3 +123,70 @@ Objectif : Enregistrer un DataFrame en tant que table temporaire et exécuter de
 
 ## Exercice 10 : Implémentation d'une Fonction de Fenêtre
 Objectif : Utiliser les fonctions de fenêtre pour calculer le classement des employés par salaire au sein de chaque département.
+
+# Partie II Installation de PySpark
+
+## Exercice 1 : Mise en route
+
+- Installer PySpark sur vos machines. PySpark est disponible dans les dépots Python
+- Lancer la commande pyspark pour lancer pyspark en ligne de commande.
+- Ouvrez la documentation de API Spark
+- Lancer la commande suivante, le contenu de votre fichier texte doit s'afficher
+    ```python
+    rddStr = sc.textFile(CHEMIN_VERS_FICHIER_TEXTE)
+    print(rddStr.collect());
+    ```
+- Téléchargez le jeu de données suivant : [worldcitiespop.txt](https://github.com/CODAIT/redrock/blob/master/twitter-decahose/src/main/resources/Location/worldcitiespop.txt.gz)
+- Reagrdez la première ligne du fichier en utilisant la commande head.
+
+## Exercice 2 : Nettoyage simple worldcitiespop
+
+Ecrivez un programme python Spark qui nettoie le fichier "worldcitiespop.txt" pour ne conserver que les lignes valides. Par valide on considère uniquement les lignes avec une population donnée.
+
+```python
+rom pyspark import *
+from math import *
+
+sc = SparkContext()
+```
+
+## Exercie 3 : Statistique
+
+Modifiez votre programme pour afficher les statistiques suivantes sur les populations des villes. (min, max, sum , average)
+
+## Exercice 4 : Historgrammes
+
+Modifiez votre programme pour calculer un histogramme de fréquences des populations des villes. Pour l'histogramme on choisira les classes d'équivalences en utilisant une échelle logarithmique. (classe 0, villes de taille [0..10[, classe 1 villes de taille [10..100[ ...).
+
+## Exercice 5 : TopK
+
+Modifiez votre programme pour calculer et afficher les 10 villes ayant la population la plus importantes.
+
+## Exercice 6 : Re-cleaning
+
+En analysant les résultats de l'exercice 5, on s'aperçoit que "Delhi" et "New Delhi" sont les mêmes villes. Proposez une solution pour enlever les doublons (différentes villes au même endroit) en ne conservant les villes de plus forte population en cas de superposition. Recalculez vos histogrammes etc... Vous devez obtenir le résultat suivant.
+
+```bash
+(count: 37774, mean: 56685.35026737963, stdev: 335272.73059020063, max: 31480498.0, min: 7.0)
+[(0, 4), (1, 65), (2, 1324), (3, 14545), (4, 18456), (5, 3107), (6, 264), (7, 9)]
+jp,tokyo,Tokyo,40,31480498,35.685,139.751389
+cn,shanghai,Shanghai,23,14608512,31.045556,121.399722
+in,bombay,Bombay,16,12692717,18.975,72.825833
+pk,karachi,Karachi,05,11627378,24.9056,67.0822
+in,delhi,Delhi,07,10928270,28.666667,77.216667
+ph,manila,Manila,D9,10443877,14.6042,120.9822
+ru,moscow,Moscow,48,10381288,55.752222,37.615556
+kr,seoul,Seoul,11,10323448,37.5985,126.9783
+br,sao paulo,S�o Paulo,27,10021437,-23.473293,-46.665803
+tr,istanbul,Istanbul,34,9797536,41.018611,28.964722
+ng,lagos,Lagos,05,8789133,6.453056,3.395833
+mx,mexico,Mexico,09,8720916,19.434167,-99.138611
+id,jakarta,Jakarta,04,8540306,-6.174444,106.829444
+us,new york,New York,NY,8107916,40.7141667,-74.0063889
+cd,kinshasa,Kinshasa,06,7787832,-4.3,15.3
+eg,cairo,Cairo,11,7734602,30.05,31.25
+pe,lima,Lima,15,7646786,-12.05,-77.05
+cn,peking,Peking,22,7480601,39.928889,116.388333
+gb,london,London,H9,7421228,51.514125,-.093689
+co,bogota,Bogot�,34,7102602,4.649178,-74.062827
+```
